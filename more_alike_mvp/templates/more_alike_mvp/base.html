@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -16,6 +19,48 @@
     {% else %}
         <title>Django Blog</title>
     {% endif %}
+
+    <style type="text/css" media="screen">
+      .jumbotron {
+        background-image: url("https://images.pexels.com/photos/3184396/pexels-photo-3184396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        background-size: cover;
+        height: auto;
+        width: auto;
+        color: white;
+        padding-left: auto;
+        padding-right: auto;
+      }
+      .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+      .display-4 {
+        color: white;
+      }
+      .content-section {
+        border: 0px;
+        -webkit-box-shadow: 3px 3px 33px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: 3px 3px 33px -6px rgba(0,0,0,0.75);
+        box-shadow: 3px 3px 33px -6px rgba(0,0,0,0.75);
+      }
+      .card-body {
+        -webkit-box-shadow: 3px 3px 33px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: 3px 3px 33px -6px rgba(0,0,0,0.75);
+        box-shadow: 3px 3px 33px -6px rgba(0,0,0,0.75);
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .btn {
+        border-radius: 0px;
+      }
+      .article-title {
+        font-family: 'Open Sans', sans-serif;
+      }
+      .article-content {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
+    
 </head>
 <body>
     <header class="site-header">
@@ -45,6 +90,18 @@
         </div>
       </nav>
     </header>
+
+    <!-- start of jumbotron -->
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4">Fluid jumbotron</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+      </div>
+    </div>
+    <!-- end of jumbotron  -->
+
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
