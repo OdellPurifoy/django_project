@@ -22,7 +22,7 @@
   <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">+Add Comment</a>
 
   {% for comment in post.comments.all %}
-    {% if user.is_authenticated or comment.approved_comment  %}
+    {% if user.is_authenticated and user.is_staff %}
       <div class="card" style="width: 45.5rem;">
         <div class="card-body">
           <h5 class="card-title">{{ comment.author }}</h5>
@@ -30,6 +30,15 @@
           <p class="card-text">{{ comment.body | linebreaks }}</p>
           <button class="btn btn-danger" href="{% url 'comment_remove' pk=comment.pk %}">Remove</button>
           <button class="btn btn-secondary" href="{% url 'comment_approve' pk=comment.pk %}">Approve</button>
+        </div>
+      </div>
+    {% else %}
+      <div class="card" style="width: 45.5rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ comment.author }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ comment.date_posted|date:"F d, Y"}}</h6>
+          <p class="card-text">{{ comment.body | linebreaks }}</p>
+          <button class="btn btn-secondary" href="#">Like</button>
         </div>
       </div>
     {% endif %}
